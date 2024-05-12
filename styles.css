@@ -1,0 +1,202 @@
+/* Estilos generales */
+:root {
+    /*Fuentes*/
+    --f_fontSize : 16px;
+    --f_fontWeight : 400;
+    --f_lineHeight : 1.5 ; /*alto del renglón. Se multiplica el fontSize*alto: 16*1.5: 24px*/
+    --f_fontFamily--Secondary: 'Montserrat', sans-serif;
+
+    /*Colores*/
+    --c_white: #fff;
+    --c_black: #000;
+
+    --c_brown: #753422; 
+    --c_earth: #B05B3B;
+    --c_earth-secondary: #D79771;
+    --c_beige: #FFEBC9;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border:.5px dotted gray;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+h1{ font-size: 2.25rem;}
+h2{font-size: 2rem;}
+h3{font-size: 1.75rem;}
+h4{font-size: 1.5rem;}
+h5{font-size: 1.25rem;}
+h6, 
+p
+{
+    font-size: 1rem;
+    max-width: 42ch; /*como máx, cualquier p tendrá 42 caracteres de largo*/
+}
+
+h1, h2 {
+    color: #333;
+}
+
+/* Estilos del header */
+/* header {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+} */
+.Header{
+    background-color: var(--c_beige);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .7rem;
+}
+.menu {
+    
+    display: flex;
+    gap: 1rem;
+}
+.menu-item{
+    list-style-type: none;
+}
+.menu-item a{
+    text-decoration: none;
+    color: black;
+}
+
+
+/*Section*/
+
+/* section {
+    padding: 20px;
+} */
+
+/*CARDS: Estilos generales*/
+.ferias__cards,
+.artesanos__cards,
+.novedades__cards{
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+.card__item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: .75rem;
+    width: 100%;
+    
+    border: 2px solid var(--c_beige);
+    border-radius: 1rem ;
+}
+.card__img img{
+    border-radius: .75rem;
+}
+.card__title{
+    color: var(--c_earth);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/*CARDS: Estilos individuales*/
+    /* Ferias */
+.sec__ferias{
+    background-color: var(--c_earth-secondary);
+    color: var(--c_beige);
+    padding: 1rem;
+}
+    /* Artesanos */
+.sec__artesanos a{
+    text-decoration: none;
+}
+.sec__artesanos .card__item{
+    background-image: url(./assets/artesanos2.jpg);
+    background-size: cover;
+    opacity: 0.7;
+}
+.sec__artesanos .card__title{
+    color: var(--c_black);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+    /* Novedades */
+.sec__novedades{}
+
+/* Formulario */
+form {
+    max-width: 500px;
+    margin: auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    height: 100px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos del footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+.Footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.footer__redes{
+    display: flex;
+    justify-content: end;
+    gap: 2rem;
+    
+    list-style-type: none;
+}
+/*Media queries*/
+@media screen and (max-width: 480px){ /*Celulares*/
+
+}
+@media screen and (min-width: 480px) and (max-width: 780px){ /*Tablets*/
+
+}
+@media screen and (min-width: 780px){ /*Computadoras*/
+    .artesanos__cards{
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+}
+}

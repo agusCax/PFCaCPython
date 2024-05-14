@@ -167,6 +167,14 @@ button:hover {
     background-color: #0056b3;
 }
 
+.error {
+    color: red; 
+    font-size: 12px; 
+    display: none; /* Por defecto, los mensajes de error están ocultos */
+    margin-top: 5px; 
+    font-weight: bold; 
+}
+
 /* Estilos del footer */
 footer {
     background-color: #333;

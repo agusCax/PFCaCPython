@@ -107,7 +107,7 @@
 
         <section class="sec__sumate">
             <a name="sumate"><h2>Sumate</h2></a>
-            <form action="#" method="post">
+            <!--form action="#" method="post">
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" required>
 
@@ -140,7 +140,62 @@
                 <input type="checkbox" name="terminos" id="terminos">
 
                 <button type="submit">Enviar</button>
+            </form-->
+            <form id="formulario-sumate"  action="#" method="post">
+                <div>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre">
+                    <span id="error-nombre" class="error"></span>
+                </div>
+                <div>
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido">
+                    <span id="error-apellido" class="error"></span>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                    <span id="error-email" class="error"></span>
+                </div>
+                <div>
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono">
+                    <span id="error-telefono" class="error"></span>
+                </div>
+                <div>
+                    <label for="foto">Foto Personal:</label>
+                    <input type="file" id="foto" name="foto">
+                    <span id="error-foto" class="error"></span>
+                </div>
+                <div>
+                    <label for="zona">Zona:</label>
+                    <select id="zona" name="zona">
+                        <option value="" selected>Seleccione...</option>
+                        <option value="caba">CABA</option>
+                        <option value="norte">GBA - Norte</option>
+                        <option value="oeste">GBA - Oeste</option>
+                        <option value="sur">GBA - Sur</option>
+                    </select>
+                    <span id="error-zona" class="error"></span>
+                </div>
+                <div>
+                    <label for="tipo">Rol:</label>
+                    <input type="radio" id="feriante" name="tipo" value="feriante">Feriante 
+                    <input type="radio" id="representante" name="tipo" value="representante">Representante de Feria
+                    <input type="radio" id="otro" name="tipo" value="otro">Otro
+                    <span id="error-tipo" class="error"></span>
+                </div>
+                <div>
+                    <input type="checkbox" id="terminos" name="terminos">Acepto los términos y condiciones
+                    
+                    <span id="error-terminos" class="error"></span>
+                </div>
+                <div>
+                    <button type="submit">Enviar</button>
+                </div>
             </form>
+            
+            <script src="formValidation.js"></script>
         </section>
 
         <section class="sec__novedades">

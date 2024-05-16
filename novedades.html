@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Novedades</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+          
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+
+
+    </style>
+    <script src="carrousel.js"></script>
+</head>
+<body>
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-item">
+                <p class="card__title">Feria de San Telmo</p>
+                <p class="carousel-description">
+                    La feria de San Telmo celebrará su 50º aniversario con eventos especiales y actividades para toda la familia el próximo fin de semana.
+                </p>
+            </div>
+            <div class="carousel-item">
+                <p class="card__title">Feria de Palermo</p>
+                <p class="carousel-description">Se abren vacantes para nuevos artesanos en la Feria de Palermo. Los interesados pueden inscribirse hasta el 30 de mayo.
+                </p>
+            </div>
+            <div class="carousel-item">
+                <p class="card__title">Feria de los Rosales</p>
+                <p class="carousel-description">La Feria de los Rosales se canceló debido a las lluvias intensas. Se reprogramará para el primer domingo de junio.
+                </p>
+            </div>
+            <div class="carousel-item">
+                <p class="card__title">Feria de Tigre</p>
+                <p class="carousel-description">La feria artesanal de Tigre ampliará su horario los sábados, ahora abriendo desde las 9:00 hasta las 20:00 para mayor comodidad de los visitantes.
+                </p>
+            </div>
+            <div class="carousel-item">
+                <p class="card__title">Feria de Recoleta</p>
+                <p class="carousel-description">Este mes, la Feria de Recoleta contará con la participación especial de artesanos internacionales, mostrando una diversidad de culturas y artesanías.
+                </p>
+            </div>
+            <div class="carousel-item">
+                <p class="card__title">Feria de Belgrano</p>
+                <p class="carousel-description">La Feria de Belgrano lanzará un nuevo sector de eco-artesanías, promoviendo productos hechos con materiales reciclados y sostenibles.
+                </p>
+            </div>
+        </div>
+        <button class="prev" onclick="moveCarousel(-1)">&#10094;</button>
+        <button class="next" onclick="moveCarousel(1)">&#10095;</button>
+    </div>
+</body>
+</html>

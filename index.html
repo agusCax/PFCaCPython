@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="formValidation.js"></script>
+    <script src="carrousel.js"></script>
 </head>
 <body>
     <!-- Comienzo Header -->
@@ -107,40 +109,6 @@
 
         <section class="sec__sumate">
             <a name="sumate"><h2>Sumate</h2></a>
-            <!--form action="#" method="post">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required>
-
-                <label for="apellido">Apellido:</label>
-                <input type="text" id="apellido" name="apellido"required>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="telefono">Teléfono</label>
-                <input type="tel" id="telefono" name="telefono" required>
-
-                <label for="fotoPersonal">Foto personal</label>
-                <input type="file" id="fotoPersonal" name="fotoPersonal">
-
-                <label for="zona">Zona de residencia</label>
-                <select name="zona" id="zona" required>
-                    <option value="CABA">CABA</option>
-                    <option value="GBA">GBA</option>
-                    <option value="GBA-Oeste">GBA-Oeste</option>
-                    <option value="GBA-Norte">GBA-Norte</option>
-                    <option value="GBA-Sur">GBA-Sur</option>
-                </select>
-
-                <label for="rol">Rol</label>
-                <input name="rol" value="feriante" type="radio">Feriante 
-                <input name="rol" value="rep. de feria" type="radio">Representante de Feria
-
-                <label for="terminos">Términos y condiciones</label>
-                <input type="checkbox" name="terminos" id="terminos">
-
-                <button type="submit">Enviar</button>
-            </form-->
             <form id="formulario-sumate"  action="#" method="post">
                 <div>
                     <label for="nombre">Nombre:</label>
@@ -195,14 +163,51 @@
                 </div>
             </form>
             
-            <script src="formValidation.js"></script>
+           
         </section>
 
         <section class="sec__novedades">
             <a name="novedades">
                 <h2>Novedades</h2>
             </a>
-            <div class="novedades__cards">
+            <div class="carousel-container">
+                <div class="carousel">
+                    <div class="carousel-item">
+                        <p class="card__title">Feria de San Telmo</p>
+                        <p class="carousel-description">
+                            La feria de San Telmo celebrará su 50º aniversario con eventos especiales y actividades para toda la familia el próximo fin de semana.
+                        </p>
+                    </div>
+                    <div class="carousel-item">
+                        <p class="card__title">Feria de Palermo</p>
+                        <p class="carousel-description">Se abren vacantes para nuevos artesanos en la Feria de Palermo. Los interesados pueden inscribirse hasta el 30 de mayo.
+                        </p>
+                    </div>
+                    <div class="carousel-item">
+                        <p class="card__title">Feria de los Rosales</p>
+                        <p class="carousel-description">La Feria de los Rosales se canceló debido a las lluvias intensas. Se reprogramará para el primer domingo de junio.
+                        </p>
+                    </div>
+                    <div class="carousel-item">
+                        <p class="card__title">Feria de Tigre</p>
+                        <p class="carousel-description">La feria artesanal de Tigre ampliará su horario los sábados, ahora abriendo desde las 9:00 hasta las 20:00 para mayor comodidad de los visitantes.
+                        </p>
+                    </div>
+                    <div class="carousel-item">
+                        <p class="card__title">Feria de Recoleta</p>
+                        <p class="carousel-description">Este mes, la Feria de Recoleta contará con la participación especial de artesanos internacionales, mostrando una diversidad de culturas y artesanías.
+                        </p>
+                    </div>
+                    <div class="carousel-item">
+                        <p class="card__title">Feria de Belgrano</p>
+                        <p class="carousel-description">La Feria de Belgrano lanzará un nuevo sector de eco-artesanías, promoviendo productos hechos con materiales reciclados y sostenibles.
+                        </p>
+                    </div>
+                </div>
+                <button class="prev" onclick="moveCarousel(-1)">&#10094;</button>
+                <button class="next" onclick="moveCarousel(1)">&#10095;</button>
+            </div>
+            <!--div class="novedades__cards">
                 <div class="card__item">
                     <figure class="card__img">
                         <img src="" alt="" />
@@ -223,7 +228,7 @@
                     </figure>
                     <p class="card__title">Novedad 3</p>
                     <p class="card__description">Un poco de texto descriptivo</p>
-                </div>
+                </div-->
         </section>
     </main>
     <!-- Comienzo Asside -->

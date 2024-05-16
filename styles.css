@@ -124,8 +124,66 @@ h1, h2 {
     font-weight: 700;
 }
 
-    /* Novedades */
-.sec__novedades{}
+/* Novedades */
+.carousel-container {
+    position: relative;
+    width: 100%;/*100%*/
+    max-width: 600px;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    flex: 0 0 33.33%;
+    box-sizing: border-box;
+    flex-direction: column;
+    padding: 20px;
+    display: flex;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin: 0 5px;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    padding: .75rem;
+    border: 2px solid var(--c_beige);
+    border-radius: 1rem ;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 0.5rem;
+}
+.carousel-description{
+    color: #333; /* Color gris oscuro */
+    font-size: 0.875rem; /* Tamaño de fuente más pequeño */
+    font-weight: 200;
+}
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.prev {
+    left: -5px;
+}
+
+.next {
+    right: -5px;
+}
 
 /* Formulario */
 form {

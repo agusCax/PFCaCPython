@@ -71,48 +71,48 @@
         </section>
 
         <section class="sec__artesanos">
-            <a name="artesanos">
+            <a name="artesanos" class="encabezado__artesanos">
                 <h2>Artesanos</h2>
                 <p>Buscá productos por categoría</p>
             </a>
             <div class="artesanos__cards">
                 <div class="card__item item__1">
-                    <button type="button" class="open-modal" data-open="modal__1">
+                    <button type="button" class="show-button" data-target=".modal__1">
                         <p class="card__title">Cerámica</p>
                     </button>
                 </div>
                 <div class="card__item item__2">
-                    <button type="button" class="open-modal" data-open="modal__2">
+                    <button type="button" class="show-button" data-target=".modal__2">
                         <p class="card__title">Cuero</p>
                     </button>
                 </div>
                 <div class="card__item item__3">
-                    <button type="button" class="open-modal" data-open="modal__3">
+                    <button type="button">
                         <p class="card__title">Encuadernación</p>
                     </button>
                 </div>
                 <div class="card__item item__4">
-                    <button type="button" class="open-modal" data-open="modal__4">
+                    <button type="button">
                         <p class="card__title">Indumentaria</p>
                     </button>
                 </div>
                 <div class="card__item item__5">
-                    <button type="button" class="open-modal" data-open="modal__5">
+                    <button type="button">
                         <p class="card__title">Joyería</p>
                     </button>
                 </div>
                 <div class="card__item item__6">
-                    <button type="button" class="open-modal" data-open="modal__6">
+                    <button type="button">
                         <p class="card__title">Tejidos</p>
                     </button>
                 </div>
                 <div class="card__item item__7">
-                    <button type="button" class="open-modal" data-open="modal__7">
+                    <button type="button">
                         <p class="card__title">Macramé</p>
                     </button>
                 </div>
                 <div class="card__item item__8">
-                    <button type="button" class="open-modal" data-open="modal__8">
+                    <button type="button">
                         <p class="card__title">Madera</p>
                     </button>
                 </div>
@@ -212,82 +212,84 @@
     </footer>
     
     <!-- Modal -->
+
+
     <!-- Cerámica -->
-    <section class="modal" id="modal__1">
-        <h2>Cerámica</h2>
+    <dialog class="modal__1 modal">
+            <h2>Cerámica</h2>
+        <div class="modal__item">
+            <div class="modal__artesano">
+                <img src="./assets/Artesanos1.jpg" alt="" class="modal__img">
+                <p class="modal__title"><strong>Be Cerámica</strong></p>
+            </div>
+
+            <p class="modal__text">Piezas hechas a mano con un proceso de sequedo rápido.</p>
+
+            <ul class="modal__info">
+                <li>Encontralos en:<br>
+                    <ul>
+                        <li><b>Feria Don Bosco</b></li>
+                        <li><b>Feria San Martin</b></li>
+                    </ul>
+                </li>
+                <ul class="modal__redes">
+                    <li><a href="#"><img src="./assets/icons/website.svg" alt="Icono Instagram"></a></li>
+                    <li><a href="#"><img src="./assets/icons/instagram.svg" alt="Icono Instagram"></a></li>
+                    <li><a href="#"><img src="./assets/icons/facebook.svg" alt="Icono Instagram"></a></li>
+                </ul>
+            </ul>
+        </div>
         <div class="modal__item">
             <div class="modal__artesano">
                 <img src="./assets/Artesanos1.jpg" alt="" class="modal__img">
                 <p class="modal__title"><strong>Be Cerámica</strong></p>
             </div>
             <ul class="modal__info">
-                <li>Encontralos en:<br> 
+                <li>Encontralos en:<br>
                     <ul>
                         <li><b>Feria Don Bosco</b></li>
                         <li><b>Feria San Martin</b></li>
                     </ul>
                 </li>
-                <div class="modal__redes">
+                <ul class="modal__redes">
                     <li><a href="#"><img src="./assets/icons/website.svg" alt="Icono Instagram"></a></li>
                     <li><a href="#"><img src="./assets/icons/instagram.svg" alt="Icono Instagram"></a></li>
-                    <li><a href="#"><img src="./assets/icons/facebook.svg" alt="Icono Instagram">hola</a></li>
-                </div>
+                    <li><a href="#"><img src="./assets/icons/facebook.svg" alt="Icono Instagram"></a></li>
+                </ul>
             </ul>
         </div>
-            <button class="modal__close" aria-label="close modal" data-close>Cerrar</button>
-    </section>
+            <button class="modal__close" onClick="this.parentElement.close()"> Cerrar </button>
+    </dialog>
 
     <!-- Cuero-->
-    <section class="modal" id="modal__2">
+    <dialog class="modal__2 modal">
         <h2>Cuero</h2>
-        <button class="modal__close" aria-label="close modal" data-close>Cerrar</button>
-    </section>
-
-    <section class="modal" id="modal__3">
-        <h2>Encuadernación</h2>
-        <button class="modal__close" aria-label="close modal" data-close>Cerrar</button>
-    </section>
-
-    <section class="modal" id="modal__4">
-        <h2>Indumentaria</h2>
-        <button class="modal__close" aria-label="close modal" data-close>Cerrar</button>
-    </section>
-
-    <section class="modal" id="modal__5">
-        <h2>Joyería</h2>
-        <button class="modal__close" aria-label="close modal" data-close>Cerrar</button>
-    </section>
-
-    <section class="modal" id="modal__6">
-        <h2>Tejidos</h2>
-        <button class="modal__close" aria-label="close modal" data-close>Cerrar</button>
-    </section>
-
-    <section class="modal" id="modal__7">
-        <h2>Macramé</h2>
-        <button class="modal__close" aria-label="close modal" data-close>Cerrar</button>
-    </section>
-
-    <section class="modal" id="modal__8">
-        <h2>Madera</h2>
-        <button class="modal__close" aria-label="close modal" data-close>Cerrar</button>
-    </section>
+        <div class="modal__item">
+            <div class="modal__artesano">
+                <img src="./assets/Artesanos1.jpg" alt="" class="modal__img">
+                <p class="modal__title"><strong>Be Cerámica</strong></p>
+            </div>
+            <ul class="modal__info">
+                <li>Encontralos en:<br>
+                    <ul>
+                        <li><b>Feria Don Bosco</b></li>
+                        <li><b>Feria San Martin</b></li>
+                    </ul>
+                </li>
+                <ul class="modal__redes">
+                    <li><a href="#"><img src="./assets/icons/website.svg" alt="Icono Instagram"></a></li>
+                    <li><a href="#"><img src="./assets/icons/instagram.svg" alt="Icono Instagram"></a></li>
+                    <li><a href="#"><img src="./assets/icons/facebook.svg" alt="Icono Instagram"></a></li>
+                </ul>
+            </ul>
+        </div>
+            <button class="modal__close" onClick="this.parentElement.close()"> Cerrar </button>
+    </dialog>
 
 
 
-<!-- <button type="button" class="open-modal" data-open="modal1">Abrir modal</button>
 
-<div class="modal" id="modal1">
-    <button class="close-modal" aria-label="close modal" data-close>Cerrar modal</button>
-    <div class="modal-dialog">
-        
-        <header class="modal-header">
-            
-        </header>
-        <section class="modal-content">...</section>
-        <footer class="modal-footer">...</footer>
-    </div>
-</div> -->
+
 
 
 

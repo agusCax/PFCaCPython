@@ -9,7 +9,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="https://kit.fontawesome.com/dbf8286e17.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- Comienzo Header -->
@@ -87,32 +89,32 @@
                     </button>
                 </div>
                 <div class="card__item item__3">
-                    <button type="button">
+                    <button type="button" class="show-button" data-target=".modal__3">
                         <p class="card__title">Encuadernación</p>
                     </button>
                 </div>
                 <div class="card__item item__4">
-                    <button type="button">
+                    <button type="button"  class="show-button" data-target=".modal__4">
                         <p class="card__title">Indumentaria</p>
                     </button>
                 </div>
                 <div class="card__item item__5">
-                    <button type="button">
+                    <button type="button" class="show-button" data-target=".modal__5">
                         <p class="card__title">Joyería</p>
                     </button>
                 </div>
                 <div class="card__item item__6">
-                    <button type="button">
+                    <button type="button" class="show-button" data-target=".modal__6">
                         <p class="card__title">Tejidos</p>
                     </button>
                 </div>
                 <div class="card__item item__7">
-                    <button type="button">
+                    <button type="button" class="show-button" data-target=".modal__7">
                         <p class="card__title">Macramé</p>
                     </button>
                 </div>
                 <div class="card__item item__8">
-                    <button type="button">
+                    <button type="button" class="show-button" data-target=".modal__8">
                         <p class="card__title">Madera</p>
                     </button>
                 </div>
@@ -195,17 +197,17 @@
         <ul class="footer__redes">
             <li>
                 <a href="https://www.instagram.com/">
-                <img src="./assets/icons/instagram.svg" alt="Icono Instagram" width="30px" height="30px"> 
+                    <i class="fa-brands fa-instagram"></i>
                 </a>
             </li>
             <li>
                 <a href="https://www.facebook.com/">
-                <img src="./assets/icons/facebook.svg" alt="Icono Facebook" width="30px" height="30px">
+                    <i class="fa-brands fa-facebook-f"></i>
                 </a>
             </li>
             <li>
                 <a href="https://web.whatsapp.com/"> 
-                <img src="./assets/icons/whatsapp.svg" alt="Icono Whatsapp" width="30px" height="30px"> 
+                <i class="fa-brands fa-whatsapp"></i> 
                 </a>
             </li>
         </ul>
@@ -219,42 +221,58 @@
             <h2>Cerámica</h2>
         <div class="modal__item">
             <div class="modal__artesano">
-                <img src="./assets/Artesanos1.jpg" alt="" class="modal__img">
-                <p class="modal__title"><strong>Be Cerámica</strong></p>
+                <img src="./assets/Cards/ceramica_1.jpg" alt="" class="modal__img">
+                <p class="modal__title">Be Cerámica</p>
             </div>
-
-            <p class="modal__text">Piezas hechas a mano con un proceso de sequedo rápido.</p>
-
             <ul class="modal__info">
                 <li>Encontralos en:<br>
                     <ul>
-                        <li><b>Feria Don Bosco</b></li>
-                        <li><b>Feria San Martin</b></li>
+                        <li><span>Feria Don Bosco</span></li>
+                        <li><span>Feria San Martin</span></li>
                     </ul>
                 </li>
                 <ul class="modal__redes">
-                    <li><a href="#"><img src="./assets/icons/website.svg" alt="Icono Instagram"></a></li>
-                    <li><a href="#"><img src="./assets/icons/instagram.svg" alt="Icono Instagram"></a></li>
-                    <li><a href="#"><img src="./assets/icons/facebook.svg" alt="Icono Instagram"></a></li>
+                    <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
                 </ul>
             </ul>
         </div>
         <div class="modal__item">
             <div class="modal__artesano">
-                <img src="./assets/Artesanos1.jpg" alt="" class="modal__img">
-                <p class="modal__title"><strong>Be Cerámica</strong></p>
+                <img src="./assets/Cards/ceramica_2.jpg" alt="" class="modal__img">
+                <p class="modal__title">Tierra & Fuego</p>
             </div>
             <ul class="modal__info">
                 <li>Encontralos en:<br>
                     <ul>
-                        <li><b>Feria Don Bosco</b></li>
-                        <li><b>Feria San Martin</b></li>
+                        <li><span>Feria Don Bosco</span></li>
+                        <li><span>Feria Mataderos</span></li>
                     </ul>
                 </li>
                 <ul class="modal__redes">
-                    <li><a href="#"><img src="./assets/icons/website.svg" alt="Icono Instagram"></a></li>
-                    <li><a href="#"><img src="./assets/icons/instagram.svg" alt="Icono Instagram"></a></li>
-                    <li><a href="#"><img src="./assets/icons/facebook.svg" alt="Icono Instagram"></a></li>
+                    <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                </ul>
+            </ul>
+        </div>
+        <div class="modal__item">
+            <div class="modal__artesano">
+                <img src="./assets/Cards/ceramica_3.jpg" alt="" class="modal__img">
+                <p class="modal__title">Urbana Cerámicas</p>
+            </div>
+            <ul class="modal__info">
+                <li>Encontralos en:<br>
+                    <ul>
+                        <li><span>Feria Morón</span></li>
+                        <li><span>Feria San Martin</span></li>
+                    </ul>
+                </li>
+                <ul class="modal__redes">
+                    <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
                 </ul>
             </ul>
         </div>
@@ -266,26 +284,435 @@
         <h2>Cuero</h2>
         <div class="modal__item">
             <div class="modal__artesano">
-                <img src="./assets/Artesanos1.jpg" alt="" class="modal__img">
-                <p class="modal__title"><strong>Be Cerámica</strong></p>
+                <img src="./assets/Cards/cuero_1.jpg" alt="" class="modal__img">
+                <p class="modal__title"><p>LaLoc</p>
             </div>
             <ul class="modal__info">
                 <li>Encontralos en:<br>
                     <ul>
-                        <li><b>Feria Don Bosco</b></li>
-                        <li><b>Feria San Martin</b></li>
+                        <li><span>Feria San Justo</span></li>
+                        <li><span>Feria Don Bosco</span></li>
                     </ul>
                 </li>
                 <ul class="modal__redes">
-                    <li><a href="#"><img src="./assets/icons/website.svg" alt="Icono Instagram"></a></li>
-                    <li><a href="#"><img src="./assets/icons/instagram.svg" alt="Icono Instagram"></a></li>
-                    <li><a href="#"><img src="./assets/icons/facebook.svg" alt="Icono Instagram"></a></li>
+                    <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                </ul>
+            </ul>
+        </div>
+        <div class="modal__item">
+            <div class="modal__artesano">
+                <img src="./assets/Cards/cuero_2.jpg" alt="" class="modal__img">
+                <p class="modal__title"><p>Couro</p>
+            </div>
+            <ul class="modal__info">
+                <li>Encontralos en:<br>
+                    <ul>
+                        <li><span>Feria Tigre</span></li>
+                    </ul>
+                </li>
+                <ul class="modal__redes">
+                    <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                </ul>
+            </ul>
+        </div>
+        <div class="modal__item">
+            <div class="modal__artesano">
+                <img src="./assets/Cards/cuero_3.jpg" alt="" class="modal__img">
+                <p class="modal__title"><p>Lazaro cuero</p>
+            </div>
+            <ul class="modal__info">
+                <li>Encontralos en:<br>
+                    <ul>
+                        <li><span>Feria La boca</span></li>
+                        <li><span>Feria San Isidro</span></li>
+                    </ul>
+                </li>
+                <ul class="modal__redes">
+                    <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
                 </ul>
             </ul>
         </div>
             <button class="modal__close" onClick="this.parentElement.close()"> Cerrar </button>
     </dialog>
 
+    <!-- Encuadernación -->
+    <dialog class="modal__3 modal">
+        <h2>Encuadernación</h2>
+        <div class="modal__item">
+            <div class="modal__artesano">
+                <img src="./assets/Cards/encuadernacion_1.jpg" alt="" class="modal__img">
+                <p class="modal__title"><p>Atelier de Cuadernos</p>
+            </div>
+            <ul class="modal__info">
+                <li>Encontralos en:<br>
+                    <ul>
+                        <li><span>Feria Ituzaingó</span></li>
+                        <li><span>Feria Castelar</span></li>
+                    </ul>
+                </li>
+                <ul class="modal__redes">
+                    <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                </ul>
+            </ul>
+        </div>
+        <div class="modal__item">
+            <div class="modal__artesano">
+                <img src="./assets/Cards/encuadernacion_2.jpg" alt="" class="modal__img">
+                <p class="modal__title"><p>La Bartola Cuadernos</p>
+            </div>
+            <ul class="modal__info">
+                <li>Encontralos en:<br>
+                    <ul>
+                        <li><span>Feria Haedo</span></li>
+                        <li><span>Feria San Martin</span></li>
+                    </ul>
+                </li>
+                <ul class="modal__redes">
+                    <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                </ul>
+            </ul>
+        </div>
+        <div class="modal__item">
+            <div class="modal__artesano">
+                <img src="./assets/Cards/encuadernacion_3.jpg" alt="" class="modal__img">
+                <p class="modal__title"><p>Pomelo Cuadernos</p>
+            </div>
+            <ul class="modal__info">
+                <li>Encontralos en:<br>
+                    <ul>
+                        <li><span>Feria Don Bosco</span></li>
+                        <li><span>Feria Mataderos</span></li>
+                        <li><span>Feria San Justo</span></li>
+                    </ul>
+                </li>
+                <ul class="modal__redes">
+                    <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                </ul>
+            </ul>
+        </div>
+            <button class="modal__close" onClick="this.parentElement.close()"> Cerrar </button>
+    </dialog>
+
+    <!-- Indumentaria -->
+    <dialog class="modal__4 modal">
+        <h2>Indumentaria</h2>
+        <div class="modal__item">
+            <div class="modal__artesano">
+                <img src="./assets/Cards/indumentaria_1.jpg" alt="" class="modal__img">
+                <p class="modal__title"><p>Alma Textil</p>
+            </div>
+            <ul class="modal__info">
+                <li>Encontralos en:<br>
+                    <ul>
+                        <li><span>Feria Don Bosco</span></li>
+                        <li><span>Feria San Martin</span></li>
+                    </ul>
+                </li>
+                <ul class="modal__redes">
+                    <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                </ul>
+            </ul>
+        </div>
+        <div class="modal__item">
+            <div class="modal__artesano">
+                <img src="./assets/Cards/indumentaria_2.jpg" alt="" class="modal__img">
+                <p class="modal__title"><p>Hilos y Telas</p>
+            </div>
+            <ul class="modal__info">
+                <li>Encontralos en:<br>
+                    <ul>
+                        <li><span>Feria Don Bosco</span></li>
+                        <li><span>Feria Morón</span></li>
+                    </ul>
+                </li>
+                <ul class="modal__redes">
+                    <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                </ul>
+            </ul>
+        </div>
+        <div class="modal__item">
+            <div class="modal__artesano">
+                <img src="./assets/Cards/indumentaria_3.jpg" alt="" class="modal__img">
+                <p class="modal__title"><p>Tejiendo Sueños</p>
+            </div>
+            <ul class="modal__info">
+                <li>Encontralos en:<br>
+                    <ul>
+                        <li><span>Feria Haedo</span></li>
+                        <li><span>Feria Ituzaingó</span></li>
+                    </ul>
+                </li>
+                <ul class="modal__redes">
+                    <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                </ul>
+            </ul>
+        </div>
+            <button class="modal__close" onClick="this.parentElement.close()"> Cerrar </button>
+    </dialog>
+
+    <!-- Joyería -->
+    <dialog class="modal__5 modal">
+        <h2>Joyería</h2>
+        <div class="modal__item">
+            <div class="modal__artesano">
+                <img src="./assets/Cards/joyeria_1.jpg" alt="" class="modal__img">
+                <p class="modal__title"><p>Brillo Artesano</p>
+            </div>
+            <ul class="modal__info">
+                <li>Encontralos en:<br>
+                    <ul>
+                        <li><span>Feria Don Bosco</span></li>
+                    </ul>
+                </li>
+                <ul class="modal__redes">
+                    <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                </ul>
+            </ul>
+        </div>
+        <div class="modal__item">
+            <div class="modal__artesano">
+                <img src="./assets/Cards/joyeria_2.jpg" alt="" class="modal__img">
+                <p class="modal__title"><p>Ama joyería</p>
+            </div>
+            <ul class="modal__info">
+                <li>Encontralos en:<br>
+                    <ul>
+                        <li><span>Feria Plaza Italia</span></li>
+                        <li><span>Feria San Martin</span></li>
+                    </ul>
+                </li>
+                <ul class="modal__redes">
+                    <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                </ul>
+            </ul>
+        </div>
+        <div class="modal__item">
+            <div class="modal__artesano">
+                <img src="./assets/Cards/joyeria_3.jpg" alt="" class="modal__img">
+                <p class="modal__title"><p>Calatea joyeria</p>
+            </div>
+            <ul class="modal__info">
+                <li>Encontralos en:<br>
+                    <ul>
+                        <li><span>Feria Don Bosco</span></li>
+                    </ul>
+                </li>
+                <ul class="modal__redes">
+                    <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                </ul>
+            </ul>
+        </div>
+            <button class="modal__close" onClick="this.parentElement.close()"> Cerrar </button>
+    </dialog>
+
+    <!-- Tejidos -->
+    <dialog class="modal__6 modal">
+        <h2>Tejidos</h2>
+        <div class="modal__item">
+            <div class="modal__artesano">
+                <img src="./assets/Cards/tejidos_1.jpg" alt="" class="modal__img">
+                <p class="modal__title"><p>Rou Tejidos</p>
+            </div>
+            <ul class="modal__info">
+                <li>Encontralos en:<br>
+                    <ul>
+                        <li><span>Feria Haedo</span></li>
+                        <li><span>Feria San Martin</span></li>
+                    </ul>
+                </li>
+                <ul class="modal__redes">
+                    <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                </ul>
+            </ul>
+        </div>
+        <div class="modal__item">
+            <div class="modal__artesano">
+                <img src="./assets/Cards/tejidos_2.jpg" alt="" class="modal__img">
+                <p class="modal__title"><p>Rustic wear</p>
+            </div>
+            <ul class="modal__info">
+                <li>Encontralos en:<br>
+                    <ul>
+                        <li><span>Feria San Martin</span></li>
+                    </ul>
+                </li>
+                <ul class="modal__redes">
+                    <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                </ul>
+            </ul>
+        </div>
+        <div class="modal__item">
+            <div class="modal__artesano">
+                <img src="./assets/Cards/tejidos_3.jpg" alt="" class="modal__img">
+                <p class="modal__title"><p>Tejidos de Juani</p>
+            </div>
+            <ul class="modal__info">
+                <li>Encontralos en:<br>
+                    <ul>
+                        <li><span>Feria Don Bosco</span></li>
+                        <li><span>Feria San Justo</span></li>
+                    </ul>
+                </li>
+                <ul class="modal__redes">
+                    <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                </ul>
+            </ul>
+        </div>
+            <button class="modal__close" onClick="this.parentElement.close()"> Cerrar </button>
+    </dialog>
+
+    <!-- Macramé -->
+    <dialog class="modal__7 modal">
+        <h2>Macramé</h2>
+        <div class="modal__item">
+            <div class="modal__artesano">
+                <img src="./assets/Cards/macrame_1.jpg" alt="" class="modal__img">
+                <p class="modal__title"><p>RosiDeco</p>
+            </div>
+            <ul class="modal__info">
+                <li>Encontralos en:<br>
+                    <ul>
+                        <li><span>Feria Mataderos</span></li>
+                    </ul>
+                </li>
+                <ul class="modal__redes">
+                    <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                </ul>
+            </ul>
+        </div>
+        <div class="modal__item">
+            <div class="modal__artesano">
+                <img src="./assets/Cards/macrame_2.jpg" alt="" class="modal__img">
+                <p class="modal__title"><p>Macramé Natural</p>
+            </div>
+            <ul class="modal__info">
+                <li>Encontralos en:<br>
+                    <ul>
+                        <li><span>Feria Morón</span></li>
+                        <li><span>Feria Haedo</span></li>
+                    </ul>
+                </li>
+                <ul class="modal__redes">
+                    <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                </ul>
+            </ul>
+        </div>
+        <div class="modal__item">
+            <div class="modal__artesano">
+                <img src="./assets/Cards/macrame_3.jpg" alt="" class="modal__img">
+                <p class="modal__title"><p>Vito Creativa</p>
+            </div>
+            <ul class="modal__info">
+                <li>Encontralos en:<br>
+                    <ul>
+                        <li><span>Feria Don Bosco</span></li>
+                    </ul>
+                </li>
+                <ul class="modal__redes">
+                    <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                </ul>
+            </ul>
+        </div>
+            <button class="modal__close" onClick="this.parentElement.close()"> Cerrar </button>
+    </dialog>
+
+    <!-- Madera -->
+    <dialog class="modal__8 modal">
+        <h2>Madera</h2>
+        <div class="modal__item">
+            <div class="modal__artesano">
+                <img src="./assets/Cards/madera_1.jpg" alt="" class="modal__img">
+                <p class="modal__title"><p>Madera Viva</p>
+            </div>
+            <ul class="modal__info">
+                <li>Encontralos en:<br>
+                    <ul>
+                        <li><span>Feria Caminito</span></li>
+                    </ul>
+                </li>
+                <ul class="modal__redes">
+                    <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                </ul>
+            </ul>
+        </div>
+        <div class="modal__item">
+            <div class="modal__artesano">
+                <img src="./assets/Cards/madera_2.jpg" alt="" class="modal__img">
+                <p class="modal__title"><p>Deco Muebles</p>
+            </div>
+            <ul class="modal__info">
+                <li>Encontralos en:<br>
+                    <ul>
+                        <li><span>Feria Plaza Francia</span></li>
+                        <li><span>Feria Caminito</span></li>
+                    </ul>
+                </li>
+                <ul class="modal__redes">
+                    <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                </ul>
+            </ul>
+        </div>
+        <div class="modal__item">
+            <div class="modal__artesano">
+                <img src="./assets/Cards/madera_3.jpg" alt="" class="modal__img">
+                <p class="modal__title"><p>En Madera.arg</p>
+            </div>
+            <ul class="modal__info">
+                <li>Encontralos en:<br>
+                    <ul>
+                        <li><span>Feria Plaza Italia</span></li>
+                        <li><span>Feria Plaza Armenia</span></li>
+                    </ul>
+                </li>
+                <ul class="modal__redes">
+                    <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                </ul>
+            </ul>
+        </div>
+            <button class="modal__close" onClick="this.parentElement.close()"> Cerrar </button>
+    </dialog>
 
 
 

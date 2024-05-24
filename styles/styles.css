@@ -525,3 +525,12 @@ textarea {
     
 }
 
+/* Animaciones */
+.animate__fadeInDown
+{
+    animation-duration: 1.5s;
+}
+.animate__fadeIn{
+    animation-duration: 2.5s;
+}
+

@@ -49,11 +49,7 @@ p {
 
 
 /* Estilos del header */
-/* header {
-    background-color: #f0f0f0;
-    padding: 20px;
-    text-align: center;
-} */
+
 .Header{
     display: flex;
     justify-content: space-between;
@@ -73,11 +69,6 @@ p {
     color: var(--c_earth);
 }
 
-/*Section*/
-
-/*section {
-    padding: 1rem;
-}*/
 
 /*CARDS: Estilos generales*/
 .ferias__cards,
@@ -100,6 +91,16 @@ p {
     border-radius: 1rem;
 }
 
+
+/*CARDS: Estilos individuales*/
+/* Ferias */
+
+.sec__ferias{
+    color: var(--c_earth);
+}
+.sec__ferias .carrouself_item{
+    border: 1px solid var(--c_gray);
+}
 .carrouself_container {
     display: flex;
     position: relative;
@@ -154,15 +155,6 @@ p {
 }
 .resaltado {
     font-weight: 500; 
-}
-/*CARDS: Estilos individuales*/
-/* Ferias */
-
-.sec__ferias{
-    color: var(--c_earth);
-}
-.sec__ferias .carrouself_item{
-    border: 1px solid var(--c_gray);
 }
 
 /* Artesanos */
@@ -322,12 +314,20 @@ footer {
 /*Media queries*/
 @media screen and (max-width: 480px) {
     /*Celulares*/
-
+.prev,
+.next {
+    position: absolute;
+    top:60%;
+}
 }
 
 @media screen and (min-width: 480px) and (max-width: 780px) {
     /*Tablets*/
-
+.prev,
+.next {
+    position: absolute;
+    top: 100%;
+}
 }
 
 @media screen and (min-width: 780px) {

@@ -14,11 +14,12 @@
     /* --c_brown: #753422;  
     --c_beige: #f8e3bf; 
     --c_earth-secondary: #D79771;*/
-
     --c_earth: #F15606;
+    --c_pink: #FFC2BA;
     --c_back: #FBF6F2;
     --c_gray: #595959;
     --c_gray-secondary: #A6A6A6;
+    --c_blue: #134882;
 }
 *{
     margin: 0;
@@ -52,6 +53,7 @@ h2 {
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
+    background-color: var(--c_blue);
 }
 .menu {
     display: flex;

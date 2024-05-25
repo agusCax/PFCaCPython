@@ -26,7 +26,7 @@
     padding: 0;
     box-sizing: border-box;
     /* border:.5px dotted gray; */
-    scroll-behavior: smooth;
+    scroll-behavior: smooth;  /* VER*/
 }
 body {
     font-family: var(--f_fontFamily);
@@ -113,8 +113,63 @@ section {
 .sec__ferias{
     color: var(--c_blue);
 }
-.sec__ferias .card__item{
+.sec__ferias .carrouself_item{
     border: 1px solid var(--c_gray);
+}
+.carrouself_container {
+    display: flex;
+    position: relative;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    
+}
+
+.carrouself_items {
+    display: flex;
+    padding-left: 0.75rem;
+    /* Mitad del gap */
+    padding-right: 0.75rem;
+    /* Mitad del gap */
+}
+
+.carrouself_item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    
+    flex: 0 0 calc(33.33% - 2rem);
+    background-color: #fff;
+    gap: 1rem;
+    padding: 3px;
+    box-shadow: 0 0 0 2px var(--c_beige);
+    border-radius: 1rem;
+    margin-right: 0.5;
+    margin-left: 0.5rem;
+}
+
+.carrouself_item:first-child {
+    margin-left: 0;
+}
+
+.card__img img {
+    border-radius: .75rem;
+}
+
+.card__title {
+    color: var(--c_earth);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.card__description{
+    list-style-position: inside;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 400;
+}
+.resaltado {
+    font-weight: 500; 
 }
 
     /* Artesanos */
@@ -419,6 +474,11 @@ textarea {
     .Header{
         flex-direction: column;
     }
+    .prev,
+    .next {
+        position: absolute;
+        top:60%;
+    }
     .artesanos__cards{
         display: inline-flex;
         height: auto;
@@ -450,6 +510,11 @@ textarea {
     }
     .menu{
         flex-direction: column;
+    }
+    .prev,
+    .next {
+        position: absolute;
+        top: 100%;
     }
     .artesanos__cards {
         display: grid;

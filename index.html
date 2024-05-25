@@ -259,13 +259,24 @@
                 </div>
                 <div>
                     <label for="tipo">Rol:</label>
-                    <input type="radio" id="feriante" name="tipo" value="feriante">Feriante
-                    <input type="radio" id="representante" name="tipo" value="representante">Representante de Feria
-                    <input type="radio" id="otro" name="tipo" value="otro">Otro
+                    <ul class="roles">
+                        <li>
+                            <input type="radio" id="feriante" name="tipo" value="feriante">
+                            <label for="feriante">Feriante</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="representante" name="tipo" value="representante">
+                            <label for="representante">Representante de Feria</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="otro" name="tipo" value="otro">
+                            <label for="otro">Otro</label>
+                        </li>
+                    </ul>
                     <span id="error-tipo" class="error"></span>
                 </div>
                 <div>
-                    <input type="checkbox" id="terminos" name="terminos">Acepto los términos y condiciones
+                    <input type="checkbox" id="terminos" name="terminos"> Acepto los términos y condiciones
 
                     <span id="error-terminos" class="error"></span>
                 </div>

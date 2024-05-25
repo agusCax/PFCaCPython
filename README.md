@@ -35,14 +35,9 @@ Este proyecto ha sido desarrollado por:
 - **Vanesa Oliveros**
 - **Carla Duarte**
 
-## ¿Cómo Ejecutar el Proyecto Localmente?
+## ¿Cómo ver este sitio en vivo?
 
-Si deseas ejecutar este proyecto en tu máquina local, sigue estos pasos:
-
-1. Clona este repositorio en tu máquina local.
-2. Navega hasta el directorio del proyecto en tu terminal.
-3. Ejecuta el comando `python manage.py runserver`.
-4. Abre tu navegador y ve a `http://localhost:8000` para ver la aplicación en funcionamiento.
+Encontrarás este sitio funcionando en `https://artesanoconexion.netlify.app/`
 
 ## Agradecimientos
 

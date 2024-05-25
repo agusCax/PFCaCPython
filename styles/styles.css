@@ -285,21 +285,23 @@ section {
     width: 100%;
     text-align: center;
 }
-.modal__info{
-    list-style-type: none;
+.modal__info__gral{
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-} 
+    gap: .5rem;
+}
 .modal__info ul{
     list-style-type: none;
     font-weight: 600;
 }
-.modal__redes{
+.modal__redes ul{
     display: flex;
     justify-content: space-around;
     align-items: center;
     gap: .5rem;
+}
+.modal__redes li{
+    list-style-type: none;
 }
 .modal__redes i{
     color: var(--c_gray-secondary);
@@ -524,7 +526,7 @@ textarea {
     .prev,
     .next {
         position: absolute;
-        top: 100%;
+        top: 60%;
     }
     .artesanos__cards {
         display: grid;

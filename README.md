@@ -31,8 +31,8 @@ Este proyecto ha sido desarrollado utilizando las siguientes tecnologías:
 
 Este proyecto ha sido desarrollado por:
 
-- **Agustina**
-- **Vanesa**
+- **Agustina Caceres Perez**
+- **Vanesa Oliveros**
 - **Carla Duarte**
 
 ## ¿Cómo Ejecutar el Proyecto Localmente?

@@ -27,10 +27,10 @@ time = cur.fetchone()[0]
 cur.execute('SELECT version();')
 version = cur.fetchone()[0]
 # Close the cursor and return the connection to the pool
-cur.close()
-connection_pool.putconn(conn)
+# cur.close()
+# connection_pool.putconn(conn)
 # Close all connections in the pool
-connection_pool.closeall()
+# connection_pool.closeall()
 
 
 
@@ -41,8 +41,14 @@ app=Flask(__name__)
 
 @app.route('/')
 def index():
-    return 'Hola desde Flask'
+    sql = "SELECT * FROM artesano"
+    conn = connection_pool.getconn()
+    cursor = conn.cursor()
+    cursor.execute(sql)
+    artesanos = cursor.fetchall()
+    conn.commit()
+    return render_template('index.html', artesanos=artesanos)
 
-
+# Fin de app
 if __name__=="__main__":
     app.run(debug=True)

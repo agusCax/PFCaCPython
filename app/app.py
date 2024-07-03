@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import os
 # Conexion a Database
 from psycopg2 import pool
@@ -49,6 +49,40 @@ def index():
     conn.commit()
     return render_template('index.html', artesanos=artesanos)
 
+@app.route('/create') #Ruta que únicamente devuelve el template
+def create(): 
+    return render_template('create.html')
+
+@app.route('/store', methods=["POST"]) #Ruta que recibe la información obtenida con el form con POST y la envía a la DB 
+def store():
+    _nombre = request.form['nombre'] #El método request de Flask permite traer la información obtenida en forma de tupla 
+    _whatsapp = request.form['whatsapp']
+    _instagram = request.form['instagram']
+    _facebook = request.form['facebook']
+    _estado = request.form['estado']
+    _imagen = request.files['imagen']
+    _idCategoria = request.form['idCategoria']
+    #_ferias = request.form['ferias']
+    conn = connection_pool.getconn()
+    cursor = conn.cursor()
+
+    try:
+        sql= "INSERT INTO artesano (nombre, whatsapp, instagram, facebook, estado, imagen, categoria_id) values (%s,%s,%s,%s,%s,%s,%s)"
+        datos = (_nombre, _whatsapp, _instagram, _facebook, _estado, _imagen.filename, _idCategoria)
+        cursor.execute(sql, datos)
+        #artesano_nuevo = cursor.fetchall()
+        conn.commit()
+    except Exception as e:
+        conn.rollback()
+        print(f"Error: {e}")
+    finally:  
+        cursor.close()
+        conn.close()
+    return render_template('index.html') 
+
+
 # Fin de app
 if __name__=="__main__":
     app.run(debug=True)
+
+

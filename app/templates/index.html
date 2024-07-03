@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Administración</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Estado</th>
+                <th>Categoría</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for artesano in artesanos%}
+            <tr>
+                <td>{{artesano[0]}}</td>
+                <td>{{artesano[1]}}</td>
+                <td>{{artesano[5]}}</td>
+                <td>{{artesano[10]}}</td>
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+</body>
+</html>

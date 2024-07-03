@@ -1,37 +1,71 @@
-<form  method="POST" action="/store" enctype="multipart/form-data">
-    <label for="nombre">Nombre:</label>
-    <input type="text" name="nombre" id="nombre">
-    <br>
-    <label for="whatsapp">Whatsapp:</label>
-    <input type="text" name="whatsapp" id="whatsapp">
-    <br>
-    <label for="instagram">Instagram:</label>
-    <input type="text" name="instagram" id="instagram">
-    <br>
-    <label for="facebook">Facebook:</label>
-    <input type="text" name="facebook" id="facebook">
-    <br>
-    <label for="estado">Seleccionar Estado:</label>
-    <select name="estado" id="estado">
-        <option value="1">Activo</option>
-        <option value="0">Inactivo</option>
-    </select>
-    <br>
-    <label for="imagen">Imagen:</label>
-    <input type="file" name="imagen" id="imagen">
-    <br>
-    <label for="idCategoria">Categoria:</label>
-    <select name="idCategoria" id="idCategoria">
-        {% for categoria in categorias %}
-            <option value="{{ categoria[0] }}">{{ categoria[1] }}</option>
-        {% endfor %}
-    </select>
-    <label for="idFeria">Feria:</label>
-    <select name="idFeria" id="idFeria">
-        {% for feria in ferias %}
-            <option value="{{ feria[0] }}">{{ feria[1] }}</option>
-        {% endfor %}
-    </select>
-    <br>
-    <input type="submit" value="Agregar nuevo artesano">
+{%include 'header.html'%}
+<form  method="POST" action="/store" enctype="multipart/form-data" class="mt-3">
+    <div class="d-flex flex-column w-50 mx-auto p-2 border rounded-3">
+        <div class="p-2 row mb-3">
+            <label for="nombre" class="col-sm-2 col-form-label">Nombre:</label>
+            <div class="col-sm-10">
+                <input type="text" name="nombre" id="nombre" class="form-control">
+            </div>
+        </div>
+        <div class="p-2 row mb-3">
+            <label for="whatsapp" class="col-sm-2 col-form-label">Whatsapp:</label>
+            <div class="col-sm-10">
+                <input type="text" name="whatsapp" id="whatsapp" class="form-control">
+            </div>
+        </div>
+        <div class="p-2 row mb-3">
+            <label for="instagram" class="col-sm-2 col-form-label">Instagram:</label>
+            <div class="col-sm-10">
+                <input type="text" name="instagram" id="instagram" class="form-control">
+            </div>
+        </div>
+        <div class="p-2 row mb-3">
+            <label for="facebook" class="col-sm-2 col-form-label">Facebook:</label>
+            <div class="col-sm-10">
+                <input type="text" name="facebook" id="facebook" class="form-control">
+            </div>
+        </div>
+        <div class="p-2 row mb-3">
+            <label for="estado" class="col-sm-2 col-form-label">Estado:</label>
+            <div class="col-sm-10">
+                <select name="estado" id="estado" class="form-select">
+                    <option value="1">Activo</option>
+                    <option value="0">Inactivo</option>
+                </select>
+            </div>
+            
+        </div>
+        <div class="p-2 row mb-3" >
+            <label for="imagen"class="col-sm-2 col-form-label">Imagen:</label>
+            <div class="col-sm-10">
+                <input type="file" name="imagen" id="imagen" class="form-control">
+            </div>
+        </div>
+        <div class="p-2 row mb-3">
+            <label for="idCategoria" class="col-sm-2 col-form-label">Categoria:</label>
+            <div class="col-sm-10">
+                <select name="idCategoria" id="idCategoria" class="form-select" >
+                    {% for categoria in categorias %}
+                        <option value="{{ categoria[0] }}">{{ categoria[1] }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <div class="p-2 row mb-3">
+            <label for="idFeria" class="col-sm-2 col-form-label">Feria:</label>
+            <div class="col-sm-10">
+                <select name="idFeria" id="idFeria" class="form-select" >
+                {% for feria in ferias %}
+                    <option value="{{ feria[0] }}">{{ feria[1] }}</option>
+                {% endfor %}
+                </select>
+            </div>
+            
+        </div>
+        <div class="p-2 align-self-center ">
+            <input type="submit" value="Agregar nuevo artesano" class="btn btn-dark">
+        </div>
+</div>
 </form>
+
+{%include 'footer.html'%}

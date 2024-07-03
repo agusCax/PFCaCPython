@@ -49,9 +49,32 @@ def index():
     conn.commit()
     return render_template('index.html', artesanos=artesanos)
 
+
+#------------------
+# Función para obtener ferias de la base de datos
+def get_ferias():
+    conn = connection_pool.getconn()
+    cursor = conn.cursor()
+    cursor.execute("SELECT id_feria, nombre FROM FERIA")
+    ferias = cursor.fetchall()
+    cursor.close()
+    conn.close()
+    return ferias
+
+def get_categorias():
+    conn = connection_pool.getconn()
+    cursor = conn.cursor()
+    cursor.execute("SELECT id_categoria, descripcion FROM CATEGORIA WHERE estado=1")
+    categorias = cursor.fetchall()
+    cursor.close()
+    conn.close()
+    return categorias
+
 @app.route('/create') #Ruta que únicamente devuelve el template
 def create(): 
-    return render_template('create.html')
+    ferias = get_ferias()
+    categorias = get_categorias()
+    return render_template('create.html', ferias=ferias, categorias=categorias)
 
 @app.route('/store', methods=["POST"]) #Ruta que recibe la información obtenida con el form con POST y la envía a la DB 
 def store():
@@ -62,15 +85,25 @@ def store():
     _estado = request.form['estado']
     _imagen = request.files['imagen']
     _idCategoria = request.form['idCategoria']
-    #_ferias = request.form['ferias']
+    _idFeria = request.form['idFeria']
+
     conn = connection_pool.getconn()
     cursor = conn.cursor()
+    
 
     try:
-        sql= "INSERT INTO artesano (nombre, whatsapp, instagram, facebook, estado, imagen, categoria_id) values (%s,%s,%s,%s,%s,%s,%s)"
+        sql= "INSERT INTO artesano (nombre, whatsapp, instagram, facebook, estado, imagen, categoria_id) values (%s,%s,%s,%s,%s,%s,%s) RETURNING id_artesano"
         datos = (_nombre, _whatsapp, _instagram, _facebook, _estado, _imagen.filename, _idCategoria)
         cursor.execute(sql, datos)
-        #artesano_nuevo = cursor.fetchall()
+        
+        # Obtener el id del artesano insertado
+        _idArtesano = cursor.fetchone()[0]
+        
+        # Ejecutar la segunda consulta para insertar en feria_artesano
+        sql_2 = "INSERT INTO feria_artesano (feria_id, artesano_id) VALUES (%s, %s)"
+        datos_2 = (_idFeria, _idArtesano)
+        cursor.execute(sql_2, datos_2)
+
         conn.commit()
     except Exception as e:
         conn.rollback()

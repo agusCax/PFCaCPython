@@ -11,14 +11,27 @@
     <label for="facebook">Facebook:</label>
     <input type="text" name="facebook" id="facebook">
     <br>
-    <label for="estado">Estado:</label>
-    <input type="number" name="estado" id="estado">
+    <label for="estado">Seleccionar Estado:</label>
+    <select name="estado" id="estado">
+        <option value="1">Activo</option>
+        <option value="0">Inactivo</option>
+    </select>
     <br>
     <label for="imagen">Imagen:</label>
     <input type="file" name="imagen" id="imagen">
     <br>
-    <label for="idCategoria">ID de categoría:</label>
-    <input type="number" name="idCategoria" id="idCategoria">
+    <label for="idCategoria">Categoria:</label>
+    <select name="idCategoria" id="idCategoria">
+        {% for categoria in categorias %}
+            <option value="{{ categoria[0] }}">{{ categoria[1] }}</option>
+        {% endfor %}
+    </select>
+    <label for="idFeria">Feria:</label>
+    <select name="idFeria" id="idFeria">
+        {% for feria in ferias %}
+            <option value="{{ feria[0] }}">{{ feria[1] }}</option>
+        {% endfor %}
+    </select>
     <br>
     <input type="submit" value="Agregar nuevo artesano">
 </form>

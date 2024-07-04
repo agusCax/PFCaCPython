@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, session
 import os
 # Conexion a Database
 from psycopg2 import pool
@@ -40,7 +40,7 @@ version = cur.fetchone()[0]
 
 # Comienzo de app
 app=Flask(__name__)
-
+app.secret_key = 'super secret key'
 #----------------------
 # Funciones para obtener ferias ycategorias de la base de datos
 def get_ferias():
@@ -61,6 +61,8 @@ def get_categorias():
     conn.close()
     return categorias
 #----------------------
+
+
 #Confuración para guardado de imágenes
 UPLOADS = os.path.join('app/uploads')
 app.config['UPLOADS'] = UPLOADS
@@ -81,6 +83,10 @@ def create():
     ferias = get_ferias()
     categorias = get_categorias()
     return render_template('create.html', ferias=ferias, categorias=categorias)
+
+@app.route('/login') #Ruta que únicamente devuelve el template
+def login(): 
+    return render_template('login.html')
 
 @app.route('/store', methods=["POST"]) #Ruta que recibe la información obtenida con el form con POST y la envía a la DB 
 def store():
@@ -153,6 +159,26 @@ def delete(id):
 @app.route('/modify/<int:id>')
 def modify(id):
     return redirect ('/')
+#Funcion de login
+@app.route('/acceso-login', methods= ["GET", "POST"]) #Ruta que únicamente devuelve el template
+def inicioses(): 
+    if request.method == 'POST' and 'txtCorreo' in request.form and 'txtPassword':
+        _correo = request.form ['txtCorreo']
+        _password= request.form['txtPassword']
+        conn = connection_pool.getconn()
+        cursor = conn.cursor()
+        sql = "SELECT * FROM USUARIO WHERE correo= %s AND contrasenia= %s "
+        cursor.execute(sql, (_correo,_password,))
+        account= cursor.fetchone()
+
+        if account:
+            session['logueado']= True
+            if 'id' in account :
+                session['id'] = account['id']
+
+            return redirect ('/')
+        else:
+            return render_template('login.html')
 
 # Fin de app
 if __name__=="__main__":

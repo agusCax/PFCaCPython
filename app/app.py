@@ -68,7 +68,13 @@ app.config['UPLOADS'] = UPLOADS
 
 @app.route('/')
 def index():
-    sql = "SELECT * FROM artesano"
+    sql = "SELECT a.id_artesano AS id_arteano, a.nombre AS nombre, a.whatsapp AS whatsapp,  "\
+        " a.instagram AS instagram, a.facebook AS facebook,"\
+        "CASE WHEN a.estado = 1 THEN 'Activo' ELSE 'Inactivo' END AS estado,"\
+        "a.imagen AS imagen, c.descripcion AS categoria "\
+        "FROM artesano a, categoria c "\
+        "WHERE c.id_categoria = a.categoria_id "\
+        "ORDER BY a.nombre DESC"
     conn = connection_pool.getconn()
     cursor = conn.cursor()
     cursor.execute(sql)

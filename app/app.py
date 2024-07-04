@@ -146,6 +146,23 @@ def store():
 
 @app.route('/delete/<int:id>')
 def delete(id):
+    conn = connection_pool.getconn()
+    cursor = conn.cursor()
+    try:
+        sql = "DELETE FROM artesano WHERE id_artesano= %s"
+        cursor.execute(sql, (id,))
+        
+        # Segunda consulta para eliminar en feria_artesano
+        sql_2 = "DELETE FROM feria_artesano WHERE artesano_id = %s"
+        cursor.execute(sql_2, (id,))
+        conn.commit()
+    except Exception as e:
+        conn.rollback()
+        print(f"Error: {e}")
+    finally:  
+        cursor.close()
+        connection_pool.putconn(conn)
+
     return redirect ('/')
 
 @app.route('/modify/<int:id>', methods=["GET", "POST"])

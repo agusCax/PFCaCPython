@@ -46,20 +46,31 @@ app=Flask(__name__)
 def get_ferias():
     conn = connection_pool.getconn()
     cursor = conn.cursor()
-    cursor.execute("SELECT id_feria, nombre FROM FERIA")
-    ferias = cursor.fetchall()
-    cursor.close()
-    conn.close()
+    try:
+        cursor.execute("SELECT id_feria, nombre FROM FERIA")
+        ferias = cursor.fetchall()
+    except Exception as e:
+        print(f"Error: {e}")
+        ferias = []
+    finally:
+        cursor.close()
+        connection_pool.putconn(conn)
     return ferias
 
 def get_categorias():
     conn = connection_pool.getconn()
     cursor = conn.cursor()
-    cursor.execute("SELECT id_categoria, descripcion FROM CATEGORIA WHERE estado=1")
-    categorias = cursor.fetchall()
-    cursor.close()
-    conn.close()
+    try:
+        cursor.execute("SELECT id_categoria, descripcion FROM CATEGORIA WHERE estado=1")
+        categorias = cursor.fetchall()
+    except Exception as e:
+        print(f"Error: {e}")
+        categorias = []
+    finally:
+        cursor.close()
+        connection_pool.putconn(conn)
     return categorias
+
 #----------------------
 #Confuración para guardado de imágenes
 UPLOADS = os.path.join('app/uploads')
@@ -74,7 +85,7 @@ def index():
         "a.imagen AS imagen, c.descripcion AS categoria "\
         "FROM artesano a, categoria c "\
         "WHERE c.id_categoria = a.categoria_id "\
-        "ORDER BY a.nombre DESC"
+        "ORDER BY a.nombre ASC"
     conn = connection_pool.getconn()
     cursor = conn.cursor()
     cursor.execute(sql)
@@ -128,19 +139,74 @@ def store():
     except Exception as e:
         conn.rollback()
         print(f"Error: {e}")
-    finally:  
+    finally:
         cursor.close()
-        conn.close()
+        connection_pool.putconn(conn)
     return redirect ('/')
 
 @app.route('/delete/<int:id>')
 def delete(id):
     return redirect ('/')
 
-@app.route('/modify/<int:id>')
+@app.route('/modify/<int:id>', methods=["GET", "POST"])
 def modify(id):
-    return redirect ('/')
+    if request.method == "GET":
+        # Obtener los datos del artesano para prellenar el formulario
+        conn = connection_pool.getconn()
+        cursor = conn.cursor()
+        try:
+            cursor.execute("SELECT * FROM artesano WHERE id_artesano = %s", (id,))
+            artesano = cursor.fetchone()
+        except Exception as e:
+            print(f"Error: {e}")
+            artesano = None
+        finally:
+            cursor.close()
+            connection_pool.putconn(conn)
+        
+        ferias = get_ferias()
+        categorias = get_categorias()
+        return render_template('modify.html', artesano=artesano, ferias=ferias, categorias=categorias)
+    
+    if request.method == "POST":
+        # Actualizar los datos del artesano en la base de datos
+        _nombre = request.form['nombre']
+        _whatsapp = request.form['whatsapp']
+        _instagram = request.form['instagram']
+        _facebook = request.form['facebook']
+        _estado = request.form['estado']
+        _imagen = request.files['imagen']
+        _idCategoria = request.form['idCategoria']
+        _idFeria = request.form['idFeria']
 
+        now = datetime.now()
+        tiempo = now.strftime("%Y%H%M%S")
+
+        if _imagen.filename != '':
+            _imagenNuevoNombre = tiempo + '_' + _imagen.filename
+            _imagen.save("app/uploads/" + _imagenNuevoNombre)
+        else:
+            _imagenNuevoNombre = request.form['imagen_actual']
+
+        conn = connection_pool.getconn()
+        cursor = conn.cursor()
+        try:
+            sql = "UPDATE artesano SET nombre = %s, whatsapp = %s, instagram = %s, facebook = %s, estado = %s, imagen = %s, categoria_id = %s WHERE id_artesano = %s"
+            datos = (_nombre, _whatsapp, _instagram, _facebook, _estado, _imagenNuevoNombre, _idCategoria, id)
+            cursor.execute(sql, datos)
+
+            sql_2 = "UPDATE feria_artesano SET feria_id = %s WHERE artesano_id = %s"
+            datos_2 = (_idFeria, id)
+            cursor.execute(sql_2, datos_2)
+
+            conn.commit()
+        except Exception as e:
+            conn.rollback()
+            print(f"Error: {e}")
+        finally:
+            cursor.close()
+            connection_pool.putconn(conn)
+        return redirect('/')
 # Fin de app
 if __name__=="__main__":
     app.run(debug=True)

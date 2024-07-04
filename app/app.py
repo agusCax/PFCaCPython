@@ -178,12 +178,12 @@ def inicioses():
                 session['id'] = account['id']
             cursor.close()
             connection_pool.putconn(conn)
-            return redirect ('/')
+            pantalla= redirect ('/')
         else:
             cursor.close()
             connection_pool.putconn(conn)
-            return render_template('login.html')
-        
+            pantalla= render_template('login.html', mensaje= "Usuario o contraseña incorrecta")
+        return pantalla
 # Fin de app
 if __name__=="__main__":
     app.run(debug=True)

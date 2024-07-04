@@ -162,6 +162,7 @@ def modify(id):
 #Funcion de login
 @app.route('/acceso-login', methods= ["GET", "POST"]) #Ruta que únicamente devuelve el template
 def inicioses(): 
+    
     if request.method == 'POST' and 'txtCorreo' in request.form and 'txtPassword':
         _correo = request.form ['txtCorreo']
         _password= request.form['txtPassword']
@@ -175,11 +176,14 @@ def inicioses():
             session['logueado']= True
             if 'id' in account :
                 session['id'] = account['id']
-
+            cursor.close()
+            connection_pool.putconn(conn)
             return redirect ('/')
         else:
+            cursor.close()
+            connection_pool.putconn(conn)
             return render_template('login.html')
-
+        
 # Fin de app
 if __name__=="__main__":
     app.run(debug=True)

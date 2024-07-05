@@ -28,21 +28,15 @@ cur.execute('SELECT NOW();')
 time = cur.fetchone()[0]
 cur.execute('SELECT version();')
 version = cur.fetchone()[0]
-# Close the cursor and return the connection to the pool
-# cur.close()
-# connection_pool.putconn(conn)
-# Close all connections in the pool
-# connection_pool.closeall()
-
-
 
 
 
 # Comienzo de app
 app=Flask(__name__)
 app.secret_key = 'super secret key'
+
 #----------------------
-# Funciones para obtener ferias ycategorias de la base de datos
+# Funciones para obtener ferias y categorias de la base de datos
 def get_ferias():
     conn = connection_pool.getconn()
     cursor = conn.cursor()
@@ -70,15 +64,14 @@ def get_categorias():
         cursor.close()
         connection_pool.putconn(conn)
     return categorias
-
 #----------------------
-
-
 #Confuración para guardado de imágenes
 UPLOADS = os.path.join('app/uploads')
 app.config['UPLOADS'] = UPLOADS
 #----------------------
 
+#----------------------
+#RUTAS
 @app.route('/')
 def index():
     sql = "SELECT a.id_artesano AS id_arteano, a.nombre AS nombre, a.whatsapp AS whatsapp,  "\
@@ -169,7 +162,6 @@ def delete(id):
     finally:  
         cursor.close()
         connection_pool.putconn(conn)
-
 
     return redirect ('/')
 

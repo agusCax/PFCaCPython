@@ -232,31 +232,7 @@ def modify(id):
             cursor.close()
             connection_pool.putconn(conn)
     return redirect ('/')
-#Funcion de login
-@app.route('/acceso-login', methods= ["GET", "POST"]) #Ruta que únicamente devuelve el template
-def inicioses(): 
-    
-    if request.method == 'POST' and 'txtCorreo' in request.form and 'txtPassword':
-        _correo = request.form ['txtCorreo']
-        _password= request.form['txtPassword']
-        conn = connection_pool.getconn()
-        cursor = conn.cursor()
-        sql = "SELECT * FROM USUARIO WHERE correo= %s AND contrasenia= %s "
-        cursor.execute(sql, (_correo,_password,))
-        account= cursor.fetchone()
 
-        if account:
-            session['logueado']= True
-            if 'id' in account :
-                session['id'] = account['id']
-            cursor.close()
-            connection_pool.putconn(conn)
-            pantalla= redirect ('/')
-        else:
-            cursor.close()
-            connection_pool.putconn(conn)
-            pantalla= render_template('login.html', mensaje= "Usuario o contraseña incorrecta")
-        return pantalla
 # Fin de app
 if __name__=="__main__":
     app.run(debug=True)

@@ -28,6 +28,13 @@ cur.execute('SELECT NOW();')
 time = cur.fetchone()[0]
 cur.execute('SELECT version();')
 version = cur.fetchone()[0]
+# Close the cursor and return the connection to the pool
+# cur.close()
+# connection_pool.putconn(conn)
+# Close all connections in the pool
+# connection_pool.closeall()
+
+
 
 
 
@@ -35,8 +42,14 @@ version = cur.fetchone()[0]
 app=Flask(__name__)
 app.secret_key = 'super secret key'
 
+ #Inicializar la base de datos con la aplicación Flask
+init_app(app)
+CORS(app)
+ #permitir solicitudes desde cualquier origen
+
+
 #----------------------
-# Funciones para obtener ferias y categorias de la base de datos
+# Funciones para obtener ferias ycategorias de la base de datos
 def get_ferias():
     conn = connection_pool.getconn()
     cursor = conn.cursor()
@@ -64,14 +77,15 @@ def get_categorias():
         cursor.close()
         connection_pool.putconn(conn)
     return categorias
+
 #----------------------
+
+
 #Confuración para guardado de imágenes
 UPLOADS = os.path.join('app/uploads')
 app.config['UPLOADS'] = UPLOADS
 #----------------------
 
-#----------------------
-#RUTAS
 @app.route('/')
 def index():
     sql = "SELECT a.id_artesano AS id_arteano, a.nombre AS nombre, a.whatsapp AS whatsapp,  "\
@@ -141,7 +155,7 @@ def store():
     finally:
         cursor.close()
         connection_pool.putconn(conn)
-
+        
     return redirect ('/')
 
 @app.route('/delete/<int:id>')
@@ -162,6 +176,7 @@ def delete(id):
     finally:  
         cursor.close()
         connection_pool.putconn(conn)
+
 
     return redirect ('/')
 
@@ -224,7 +239,31 @@ def modify(id):
             cursor.close()
             connection_pool.putconn(conn)
     return redirect ('/')
+#Funcion de login
+@app.route('/acceso-login', methods= ["GET", "POST"]) #Ruta que únicamente devuelve el template
+def inicioses(): 
+    
+    if request.method == 'POST' and 'txtCorreo' in request.form and 'txtPassword':
+        _correo = request.form ['txtCorreo']
+        _password= request.form['txtPassword']
+        conn = connection_pool.getconn()
+        cursor = conn.cursor()
+        sql = "SELECT * FROM USUARIO WHERE correo= %s AND contrasenia= %s "
+        cursor.execute(sql, (_correo,_password,))
+        account= cursor.fetchone()
 
+        if account:
+            session['logueado']= True
+            if 'id' in account :
+                session['id'] = account['id']
+            cursor.close()
+            connection_pool.putconn(conn)
+            pantalla= redirect ('/')
+        else:
+            cursor.close()
+            connection_pool.putconn(conn)
+            pantalla= render_template('login.html', mensaje= "Usuario o contraseña incorrecta")
+        return pantalla
 # Fin de app
 if __name__=="__main__":
     app.run(debug=True)

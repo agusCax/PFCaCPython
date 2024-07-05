@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Coffee Blends</title>
+</head>
+
+<body>
+    <h1>My favourite coffee blends</h1>
+    <ul id="artesano"></ul>
+    <script>
+        (async () => {
+            try {
+                const response = await fetch('/.netlify/functions/conectar_db_conexionArtesano.mjs');
+                const blends = await response.json();
+                const blendsList = document.getElementById('artesano');
+                blends.forEach((blend) => {
+                    const li = document.createElement('li');
+                    li.innerText = `${blend.nombre} - ${blend.id_artesano}`;
+                    blendsList.appendChild(li);
+                });
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        })();
+    </script>
+</body>
+
+</html>

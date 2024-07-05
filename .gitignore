@@ -3,3 +3,7 @@ app/uploads/
 .env
 **/mientorno
 **/venv
+
+# Local Netlify folder
+.netlify
+**/node_modules
